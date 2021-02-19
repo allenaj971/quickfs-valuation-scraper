@@ -1,36 +1,22 @@
 [
   [
     "APX:AU",
+
     [
-      "Period - OCF Growth",
+      "Year - FCF margin, Rule of 40",
       "2014-2015",
       "2015-2016",
       "2016-2017",
       "2017-2018",
       "2018-2019"
     ],
-    ["OCF Growth YoY", "Infinity", "2.25", "0.00", "2.62", "0.43"],
-    [
-      "Year - FCF margin, Rule of 40",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019"
-    ],
-    ["FCF Margin", "NaN", "0.05", "0.12", "0.08", "0.13", "0.13"],
-    [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
-    ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "0", "0.05", "0.12", "0.08", "0.13"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "XRO:AU",
     [
-      "Period - OCF Growth",
+      "Year - FCF margin, Rule of 40",
       "2013-2014",
       "2014-2015",
       "2015-2016",
@@ -39,49 +25,13 @@
       "2018-2019",
       "2019-2020"
     ],
-    [
-      "OCF Growth YoY",
-      "2.33",
-      "0.90",
-      "-0.18",
-      "-0.87",
-      "-10.75",
-      "1.79",
-      "0.49"
-    ],
-    [
-      "Year - FCF margin, Rule of 40",
-      "2013",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020"
-    ],
-    [
-      "FCF Margin",
-      "-0.19",
-      "-0.30",
-      "-0.31",
-      "-0.17",
-      "-0.01",
-      "0.10",
-      "0.21",
-      "0.23"
-    ],
-    [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
-    ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "-0.19", "-0.30", "-0.31", "-0.17", "-0.01", "0.10", "0.21"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "WTC:AU",
     [
-      "Period - OCF Growth",
+      "Year - FCF margin, Rule of 40",
       "2013-2014",
       "2014-2015",
       "2015-2016",
@@ -90,79 +40,49 @@
       "2018-2019",
       "2019-2020"
     ],
-    ["OCF Growth YoY", "0.29", "0.17", "0.00", "1.62", "0.31", "0.57", "0.15"],
-    [
-      "Year - FCF margin, Rule of 40",
-      "2013",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020"
-    ],
-    [
-      "FCF Margin",
-      "0.33",
-      "0.32",
-      "0.30",
-      "0.20",
-      "0.36",
-      "0.32",
-      "0.32",
-      "0.30"
-    ],
-    [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
-    ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "0.33", "0.32", "0.30", "0.20", "0.36", "0.32", "0.32"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "ELO:AU",
-    ["Period - OCF Growth", "2016-2017", "2017-2018", "2018-2019", "2019-2020"],
-    ["OCF Growth YoY", "Infinity", "0.00", "0.25", "0.20"],
-    ["Year - FCF margin, Rule of 40", "2016", "2017", "2018", "2019", "2020"],
-    ["FCF Margin", "NaN", "0.24", "0.15", "0.13", "0.12"],
     [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
+      "Year - FCF margin, Rule of 40",
+      "2016-2017",
+      "2017-2018",
+      "2018-2019",
+      "2019-2020"
     ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "0", "0.24", "0.15", "0.13"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "BVS:AU",
-    ["Period - OCF Growth", "2016-2017", "2017-2018", "2018-2019", "2019-2020"],
-    ["OCF Growth YoY", "Infinity", "1.88", "0.00", "-0.59"],
-    ["Year - FCF margin, Rule of 40", "2016", "2017", "2018", "2019", "2020"],
-    ["FCF Margin", "NaN", "0.08", "0.21", "0.18", "0.07"],
     [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
+      "Year - FCF margin, Rule of 40",
+      "2016-2017",
+      "2017-2018",
+      "2018-2019",
+      "2019-2020"
     ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "0", "0.08", "0.21", "0.18"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "BTH:AU",
-    ["Period - OCF Growth", "2016-2017", "2017-2018", "2018-2019", "2019-2020"],
-    ["OCF Growth YoY", "-Infinity", "-0.83", "6.00", "-1.29"],
-    ["Year - FCF margin, Rule of 40", "2016", "2017", "2018", "2019", "2020"],
-    ["FCF Margin", "NaN", "-0.67", "-0.08", "-0.35", "0.06"],
     [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
+      "Year - FCF margin, Rule of 40",
+      "2016-2017",
+      "2017-2018",
+      "2018-2019",
+      "2019-2020"
     ],
-    ["FCF growth modelling"]
+    ["FCF Margin", "0", "-0.67", "-0.08", "-0.35"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "ALU:AU",
     [
-      "Period - OCF Growth",
+      "Year - FCF margin, Rule of 40",
       "2011-2012",
       "2012-2013",
       "2013-2014",
@@ -174,31 +94,6 @@
       "2019-2020"
     ],
     [
-      "OCF Growth YoY",
-      "1.67",
-      "0.63",
-      "0.54",
-      "0.40",
-      "-0.32",
-      "1.47",
-      "0.40",
-      "0.48",
-      "-0.16"
-    ],
-    [
-      "Year - FCF margin, Rule of 40",
-      "2011",
-      "2012",
-      "2013",
-      "2014",
-      "2015",
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020"
-    ],
-    [
       "FCF Margin",
       "0.07",
       "0.15",
@@ -208,27 +103,26 @@
       "0.15",
       "0.33",
       "0.35",
-      "0.41",
-      "0.31"
+      "0.41"
     ],
-    [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
-    ],
-    ["FCF growth modelling"]
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ],
   [
     "NCNO:US",
-    ["Period - OCF Growth", "2018-2019", "2019-2020"],
-    ["OCF Growth YoY", "-0.69", "0.80"],
-    ["Year - FCF margin, Rule of 40", "2018", "2019", "2020"],
-    ["FCF Margin", "-0.28", "-0.05", "-0.07"],
-    [
-      "Rule of 40 (SaaS - value must be greater than 40%, check code for growth rates)",
-      "NaN",
-      "NaN"
-    ],
-    ["FCF growth modelling"]
+    ["Year - FCF margin, Rule of 40", "2018-2019", "2019-2020"],
+    ["FCF Margin", "-0.28", "-0.05"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
+  ],
+  [
+    "FSLY:US",
+    ["Year - FCF margin, Rule of 40", "2017-2018", "2018-2019"],
+    ["FCF Margin", "-0.25", "-0.12"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
+  ],
+  [
+    "ZI:US",
+    ["Year - FCF margin, Rule of 40"],
+    ["FCF Margin", "0.31"],
+    ["Rule of 40 (SaaS - value must be greater than 40%)", "NaN"]
   ]
 ]

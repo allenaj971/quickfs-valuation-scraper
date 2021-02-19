@@ -134,6 +134,10 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
         }
       }
     );
+    //   wait for home
+    await dataPage.waitForSelector(
+      "body > app-root > app-company > app-header-content > header > div > div > div:nth-child(1) > a"
+    );
 
     //   go home
     await dataPage.click(

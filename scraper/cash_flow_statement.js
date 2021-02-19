@@ -15,7 +15,7 @@ let login = process.env.LOGIN;
 let password = process.env.PASSWORD;
 
 // launch a puppeteer function in headless mode. using async functionality. followed this: https://www.aymen-loukil.com/en/blog-en/google-puppeteer-tutorial-with-examples/
-puppeteer.launch({ headless: true }).then(async (browser) => {
+puppeteer.launch({ headless: false }).then(async (browser) => {
   // because we're using async syntax, we use try
   let dataUrl = "https://quickfs.net/login";
   // await a new browser tab and goto the url
@@ -99,26 +99,27 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
       for (k = 0; k < table.length; k++) {
         cfs_statement[i][j] = [];
         // copy company values to cfs_statement array
-        if (!cfs_statement[i][j] && table[k]) {
-          // if cfs_statement[i][] doesn't exist and table[k] is not empty, create new one
-          cfs_statement[i][j][k] = table[k];
-        } else if (String(table[k]) !== "-") {
-          // if cfs_statement[i][] does exist and table[k] is not empty
-          cfs_statement[i][j][k] = table[k];
-        } else if (String(table[k]) === "-") {
-          // else if table has stupid dash, change it to zero
-          cfs_statement[i][j][k] = "0";
+        for (k = 0; k < table.length; k++) {
+          if (!cfs_statement[i][j] && table[k]) {
+            // if cfs_statement[i][] doesn't exist and table[k] is not empty, create new one
+            cfs_statement[i][j][k] = table[k];
+          } else if (String(table[k]) !== "-") {
+            // if cfs_statement[i][] does exist and table[k] is not empty
+            cfs_statement[i][j][k] = table[k];
+          } else if (String(table[k]) === "-") {
+            // else if table has stupid dash, change it to zero
+            cfs_statement[i][j][k] = "0";
+          }
         }
-      }
-
-      // set null values to zero. then we can iterate over table but ignore 0
-      if (!cfs_statement[i][j]) {
-        cfs_statement[i][j] = "0";
-      }
-      // insert company name and years tag
-      if (!cfs_statement[i][0] || !cfs_statement[i][1][0]) {
-        cfs_statement[i][0] = Stocks[i];
-        cfs_statement[i][1][0] = "Year";
+        // set null values to zero. then we can iterate over table but ignore 0
+        if (!cfs_statement[i][j]) {
+          cfs_statement[i][j] = "0";
+        }
+        // insert company name and years tag
+        if (!cfs_statement[i][0] || !cfs_statement[i][1][0]) {
+          cfs_statement[i][0] = Stocks[i];
+          cfs_statement[i][1][0] = "Year";
+        }
       }
     }
 
@@ -131,6 +132,10 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
           console.error(err);
         }
       }
+    );
+    //   wait for home
+    await dataPage.waitForSelector(
+      "body > app-root > app-company > app-header-content > header > div > div > div:nth-child(1) > a"
     );
 
     //   go home

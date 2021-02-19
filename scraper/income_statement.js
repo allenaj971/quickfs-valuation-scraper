@@ -107,15 +107,15 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
             is_statement[i][j][k] = "0";
           }
         }
-      }
-      // set null values to zero. then we can iterate over table but ignore 0
-      if (!is_statement[i][j]) {
-        is_statement[i][j] = "0";
-      }
-      // insert company name and years tag
-      if (!is_statement[i][0] || !is_statement[i][1][0]) {
-        is_statement[i][0] = Stocks[i];
-        is_statement[i][1][0] = "Year";
+        // set null values to zero. then we can iterate over table but ignore 0
+        if (!is_statement[i][j]) {
+          is_statement[i][j] = "0";
+        }
+        // insert company name and years tag
+        if (!is_statement[i][0] || !is_statement[i][1][0]) {
+          is_statement[i][0] = Stocks[i];
+          is_statement[i][1][0] = "Year";
+        }
       }
     }
 
@@ -128,6 +128,10 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
           console.error(err);
         }
       }
+    );
+    //   wait for home
+    await dataPage.waitForSelector(
+      "body > app-root > app-company > app-header-content > header > div > div > div:nth-child(1) > a"
     );
 
     //   go home
