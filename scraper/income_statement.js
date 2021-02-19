@@ -1,23 +1,16 @@
+// import puppeteer
 const puppeteer = require("puppeteer");
 // allows export to json
 var fs = require("fs");
-// let is_statement for income statement
-const is_statement = [];
 
 // allows for access to login and password. create an .env file and put login details in caps
 const dotenv = require("dotenv");
 dotenv.config();
-// obvious...
-let stocks = [
-  "APX:AU",
-  "XRO:AU",
-  "WTC:AU",
-  "ELO:AU",
-  "BVS:AU",
-  "BTH:AU",
-  "ALU:AU",
-  "NCNO:US",
-];
+
+// let is_statement for income statement
+const is_statement = [];
+// importing stocks as json file
+let Stocks = require("./stocks.json");
 let login = process.env.LOGIN;
 let password = process.env.PASSWORD;
 
@@ -51,8 +44,8 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     "body > app-root > user-logged-in-home > app-header-main > header > div > div > div.navbar-header > a"
   );
 
-  // using for loop for a list of stocks
-  for (i = 0; i < stocks.length; i++) {
+  // using for loop for a list of Stocks
+  for (i = 0; i < Stocks.length; i++) {
     // initialise ith company array of values to copy them
     is_statement[i] = [];
 
@@ -65,7 +58,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
       "body > app-root > app-home > app-header-main > header > div > div > div.collapse.navbar-collapse.anonymous-navbar-collapse > div > app-search > div > div.input-group.stylish-input-group.width-100 > input"
     );
     // input company name
-    await dataPage.keyboard.type(stocks[i]);
+    await dataPage.keyboard.type(Stocks[i]);
     // click search
     await dataPage.click("#searchSubmitBtn");
 
@@ -121,14 +114,14 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
       }
       // insert company name and years tag
       if (!is_statement[i][0] || !is_statement[i][1][0]) {
-        is_statement[i][0] = stocks[i];
+        is_statement[i][0] = Stocks[i];
         is_statement[i][1][0] = "Year";
       }
     }
 
     // write to JSON file: https://www.semicolonworld.com/question/47954/node-js-how-to-write-an-array-to-file
     fs.writeFile(
-      ".././json/income_statement.json",
+      ".././json/scraped_financials/income_statement.json",
       JSON.stringify(is_statement),
       function (err) {
         if (err) {

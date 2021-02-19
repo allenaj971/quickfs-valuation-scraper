@@ -1,23 +1,16 @@
+// import puppeteer
 const puppeteer = require("puppeteer");
 // allows export to json
 var fs = require("fs");
-// let bs_statement for cash flow statement
-const bs_statement = [];
 
 // allows for access to login and password. create an .env file and put login details in caps
 const dotenv = require("dotenv");
 dotenv.config();
-// obvious...
-let stocks = [
-  "APX:AU",
-  "XRO:AU",
-  "WTC:AU",
-  "ELO:AU",
-  "BVS:AU",
-  "BTH:AU",
-  "ALU:AU",
-  "NCNO:US",
-];
+
+// let is_statement for income statement
+const bs_statement = [];
+// importing stocks as json file
+let Stocks = require("./stocks.json");
 let login = process.env.LOGIN;
 let password = process.env.PASSWORD;
 
@@ -51,8 +44,8 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     "body > app-root > user-logged-in-home > app-header-main > header > div > div > div.navbar-header > a"
   );
 
-  // using for loop for a list of stocks
-  for (i = 0; i < stocks.length; i++) {
+  // using for loop for a list of Stocks
+  for (i = 0; i < Stocks.length; i++) {
     // initialise ith company array of values to copy them
     bs_statement[i] = [];
 
@@ -66,7 +59,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     );
 
     // input company name
-    await dataPage.keyboard.type(stocks[i]);
+    await dataPage.keyboard.type(Stocks[i]);
     // click search
     await dataPage.click("#searchSubmitBtn");
     // wait for page to load
@@ -102,9 +95,9 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
             return td.textContent;
           })
       );
+      bs_statement[i][j] = [];
       // copy company values to bs_statement array
       for (k = 0; k < table.length; k++) {
-        bs_statement[i][j] = [];
         // copy company values to bs_statement array
         for (k = 0; k < table.length; k++) {
           if (!bs_statement[i][j] && table[k]) {
@@ -125,13 +118,15 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
         }
         // insert company name and years tag
         if (!bs_statement[i][0] || !bs_statement[i][1][0]) {
-          bs_statement[i][0] = stocks[i];
+          bs_statement[i][0] = Stocks[i];
           bs_statement[i][1][0] = "Year";
         }
       }
-    } // write to JSON file: https://www.semicolonworld.com/question/47954/node-js-how-to-write-an-array-to-file
+    }
+
+    // write to JSON file: https://www.semicolonworld.com/question/47954/node-js-how-to-write-an-array-to-file
     fs.writeFile(
-      ".././json/balance_sheet.json",
+      ".././json/scraped_financials/balance_sheet.json",
       JSON.stringify(bs_statement),
       function (err) {
         if (err) {
