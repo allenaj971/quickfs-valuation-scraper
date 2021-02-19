@@ -1,0 +1,6 @@
+# js dependencies
+node_modules/
+# py dependencies
+json/env/
+# account dets
+scraper/*.env
