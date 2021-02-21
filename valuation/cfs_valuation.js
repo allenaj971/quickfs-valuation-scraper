@@ -52,7 +52,7 @@ for (i = 0; i < cfs.length; i++) {
     // assign new row for years
     cfs_metrics[i][1] = [];
     // Add FCF margin years heading
-    cfs_metrics[i][1][0] = "Year - FCF margin, Rule of 40";
+    cfs_metrics[i][1][0] = "Year - FCF margin";
 
     // we iterate and assign to cfs_metrics.json the valid years
     for (let l = 2; l < cfs[i][1].length - 2; l++) {
@@ -83,14 +83,16 @@ for (i = 0; i < cfs.length; i++) {
     }
     // initialise the rule of 40 values row
     cfs_metrics[i][3] = [];
-    cfs_metrics[i][3][0] = "Rule of 40 (SaaS - value must be greater than 40%)";
+    cfs_metrics[i][3][0] =
+      "Rule of 40 (SaaS metric - value must be greater than 40% or 0.4)";
     // ((EBIT + D&A)/ Sales) + growth rates (provide multiple rates to show whether business is undervalued or overvalued based on different rates)
-    // to check growth rates, check grow_rates array at start of file
+    // growth rate used is the YoY OCF growth rate: https://www.thesaascfo.com/rule-of-40-saas/
     cfs_metrics[i][3][1] = (
-      (parseFloat(is[i][ebit_index][cfs[i][2].length]) +
-        parseFloat(cfs[i][dep_index][cfs[i][2].length])) /
-        parseFloat(cfs[i][rev_index][cfs[i][2].length]) +
-      parseFloat(cfs_metrics[i][2][cfs[i][2].length])
+      (parseFloat(is[i][ebit_index][is[i][ebit_index].length - 1]) +
+        parseFloat(cfs[i][dep_index][cfs[i][dep_index].length - 1])) /
+        parseFloat(is[i][rev_index][is[i][rev_index].length - 1]) +
+      parseFloat(cfs[i][ocf_index][cfs[i][ocf_index].length - 1]) /
+        parseFloat(cfs[i][ocf_index][cfs[i][ocf_index].length - 2])
     ).toFixed(2);
   }
 }
@@ -129,8 +131,12 @@ for (i = 0; i < cfs.length; i++) {
 // cfs_metrics[i][6][0] = "FCF growth modelling";
 
 // write to JSON file: https://www.semicolonworld.com/question/47954/node-js-how-to-write-an-array-to-file
-fs.writeFile("./cfs_metrics.json", JSON.stringify(cfs_metrics), function (err) {
-  if (err) {
-    console.error(err);
+fs.writeFile(
+  "../json/valuation/cfs_metrics.json",
+  JSON.stringify(cfs_metrics),
+  function (err) {
+    if (err) {
+      console.error(err);
+    }
   }
-});
+);
