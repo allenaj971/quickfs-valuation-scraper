@@ -17,4 +17,4 @@ This project includes:
 ## Valuation script
 
 1.) Select and run one of the valuation scripts, depending on which one you're using to value the company.
-2.) The valuation files will be in ./json/valuation.
+2.) The valuation files will be in './json/valuation'.
