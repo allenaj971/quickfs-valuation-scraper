@@ -1,7 +1,7 @@
 # quickfs-scraper-valuation
 
 This is the unofficial QuickFS financial information scraper and valuation scripts.
-This project includes:\
+This project includes: \
 
 1.) a scraper for the 3 financial statements.\
 2.) a json folder with the scraped financial statements.\
@@ -17,4 +17,4 @@ This project includes:\
 ## Valuation script
 
 1.) Select and run one of the valuation scripts, depending on which one you're using to value the company.\
-2.) The valuation files will be in './json/valuation'.\
+2.) The valuation files will be in './json/valuation'.
