@@ -10,7 +10,7 @@ This project includes:
 ## How to scrape financials
 
 1.) create a .env file with your LOGIN and PASSWORD for quickfs.\
-2.) enter your stocks into stocks.json as an array. ensure the tickers exist on quickfs.\
+2.) enter your stocks into stocks.json as an array. ensure the tickers exist on quickfs.net.\
 3.) run "node balance_sheet.js && node cash_flow_statement.js && node income_statement.js".\
 (Doesn't work when setting 'start: "node balance_sheet.js && node cash_flow_statement.js && node income_statement.js"' npm run start).
 
