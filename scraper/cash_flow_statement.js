@@ -15,7 +15,7 @@ let login = process.env.LOGIN;
 let password = process.env.PASSWORD;
 
 // launch a puppeteer function in headless mode. using async functionality. followed this: https://www.aymen-loukil.com/en/blog-en/google-puppeteer-tutorial-with-examples/
-puppeteer.launch({ headless: false }).then(async (browser) => {
+puppeteer.launch({ headless: true }).then(async (browser) => {
   // because we're using async syntax, we use try
   let dataUrl = "https://quickfs.net/login";
   // await a new browser tab and goto the url

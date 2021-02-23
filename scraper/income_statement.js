@@ -81,7 +81,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     );
 
     // get whole cash flow statement
-    for (j = 1; j < 23; j++) {
+    for (j = 1; j < 25; j++) {
       // iterate over columns
       let table = await dataPage.$$eval(
         `#is-table > tbody > tr:nth-child(${j}) > td`,
@@ -107,6 +107,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
             is_statement[i][j][k] = "0";
           }
         }
+
         // set null values to zero. then we can iterate over table but ignore 0
         if (!is_statement[i][j]) {
           is_statement[i][j] = "0";
