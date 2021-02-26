@@ -78,7 +78,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     // click on the cash flow statement
     await dataPage.click("#bs");
     // wait some time for page elements to load
-    await dataPage.waitForSelector("#bs-table > tbody > tr:nth-child(25)");
+    await dataPage.waitForSelector("#bs-table > tbody");
     // wait for home button to load
     await dataPage.waitForSelector(
       "body > app-root > app-company > app-header-content > header > div > div > div:nth-child(1) > a"

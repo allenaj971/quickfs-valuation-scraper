@@ -15,7 +15,7 @@ let login = process.env.LOGIN;
 let password = process.env.PASSWORD;
 
 // launch a puppeteer function in headless mode. using async functionality. followed this: https://www.aymen-loukil.com/en/blog-en/google-puppeteer-tutorial-with-examples/
-puppeteer.launch({ headless: true }).then(async (browser) => {
+puppeteer.launch({ headless: false }).then(async (browser) => {
   // because we're using async syntax, we use try
   let dataUrl = "https://quickfs.net/login";
   // await a new browser tab and goto the url
@@ -78,7 +78,7 @@ puppeteer.launch({ headless: true }).then(async (browser) => {
     // click on the cash flow statement
     await dataPage.click("#cf");
     // wait some time for page elements to load
-    await dataPage.waitForSelector("#cf-table > tbody > tr:nth-child(9)");
+    await dataPage.waitForSelector("#cf-table > tbody");
     // wait for home button to load
     await dataPage.waitForSelector(
       "body > app-root > app-company > app-header-content > header > div > div > div:nth-child(1) > a"
