@@ -1,5 +1,5 @@
 # Update - 1/03/2021
-Unfortunately, Quickfs.net has blocked scraping, in headless mode or not :(
+Unfortunately, Quickfs.net has blocked scraping :(
 
 ## Disclaimer
 
