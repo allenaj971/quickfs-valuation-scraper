@@ -1,6 +1,3 @@
-# Update - 1/03/2021
-Unfortunately, Quickfs.net has blocked scraping :(
-
 ## Disclaimer
 
 The information on this site, and its related publications, is not intended to be, nor does it constitute, investment advice or recommendations. In no event shall QuickFS.net be liable to any member, guest, or third party for any damages of any kind arising out of the use of any content or other material published or available on QuickFS.net, or relating to the use of, or inability to use, QuickFS.net or any content. The information on this site is not guaranteed for completeness, accuracy, or in any other way. I (Allen) am also not responsible for damages of any kind from the use of this project. This project (whether it be the scraper or the valuation scripts) is not intended to be, nor does it constitute, investment advice or recommendations. Please do your own research and ensure the data you collect matches the financials of the company you're trying to scrape on their respective investor relations websites.
